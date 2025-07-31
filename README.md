@@ -1,16 +1,29 @@
-## Hi there 👋
+name: Build Flutter APK
 
-<!--
-**editorxpro/Editorxpro** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+on:
+  push:
+    branches:
+      - main
 
-Here are some ideas to get you started:
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.0'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: EditProX-APK
+          path: build/app/outputs/flutter-apk/app-release.apk
