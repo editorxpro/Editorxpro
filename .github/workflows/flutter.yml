@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Build APK for Android
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +26,7 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: EditProX-APK
           path: build/app/outputs/flutter-apk/app-release.apk
