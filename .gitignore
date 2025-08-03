@@ -1,27 +1,9 @@
-# Flutter/Dart/Pub related
 .dart_tool/
 .packages
 .pub-cache/
 build/
 .idea/
-android/.gradle/
-android/captures/
-.flutter-plugins
-.flutter-plugins-dependencies
-generated_plugin_registrant.dart
-
-# VS Code
 .vscode/
-
-# Mac/Windows OS files
 .DS_Store
-Thumbs.db
-
-# GitHub specific
-*.log
-*.lock
-
-# APKs
 *.apk
-*.ipa
 *.aab
