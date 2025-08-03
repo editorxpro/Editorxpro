@@ -1,4 +1,4 @@
-# EditProX 🎬☠️
+# EditProX 🎬
 
 🎉 EditProX is a powerful mobile video editing app inspired by CapCut and Motion Ninja, built using Flutter.
 
